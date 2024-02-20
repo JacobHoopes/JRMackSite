@@ -2,20 +2,46 @@
 <html lang="ja">
 
 <head>
-  <meta charset="UTF-8" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>JRMack Site</title>
+  <style>
+    html{
+        height: 100%;
+        margin: 0;
+        text-align: center;
+        
+    }
+
+    body {
+        height: 80%;
+    }
+
+    .container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100%;
+    }
+    .content {
+        width: 400px;
+        height: 200px;
+    }
+  </style>
 </head>
 
-  <body>
+<body>
     <header>
-      <h1>Website Homepage</h1>
-      <!-- <p>A demo of the <a href="https://rrchnm.org">RRCHNM</a>.</p> -->
-      <p>by Jessica R. Mack</p>
+        <h1>Website Homepage</h1>
+        <!-- <p>A demo of the <a href="https://rrchnm.org">RRCHNM</a>.</p> -->
+        <p>by Jessica R. Mack</p>
     </header>
 
-  <main>
-    <div>This page can become anything.</div>
-
-    <p>Map site: <a href="./unam/">UNAM</a></p>
+  <main class="container">
+    <div class="content">
+        <p>This page can be anything.</p>
+        <p>Map site: <a href="./unam/">UNAM</a></p>
+    </div>
   </main>
 
 </body>
