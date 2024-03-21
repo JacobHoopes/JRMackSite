@@ -1,11 +1,12 @@
 d3.json("assets/unam-buildings.geojson").then(function (data) {
   const buildings = data;
 
-  const TILE_BASE = "https://scholarship.rrchnm.org/unam-tiles";
+  // const TILE_BASE = "https://scholarship.rrchnm.org/unam-tiles";
+  const TILE_BASE = "./assets/tiles";
 
   const buildingStyles = {
     color: "green",
-    weight: 5,
+    weight: 2,
     opacity: 0.65,
   };
 
@@ -41,6 +42,18 @@ d3.json("assets/unam-buildings.geojson").then(function (data) {
     attribution: "Photograph attribution goes here",
   });
 
+  /*
+  New tiles below
+  */
+
+  const ciudad_Universitaria_1982 = new L.tileLayer(`./assets/tiles/CIUDAD_UNIVERSITARIA_1982.jpg`, {
+    attribution: "Photograph attribution goes here",
+  });
+
+  const inegi_2007 = new L.tileLayer(`./assets/tiles/INEGI_2007.jpg`, {
+    attribution: "Photograph attribution goes here",
+  });
+
   const buildingLayer = new L.geoJSON(buildings, {
     style: buildingStyles,
     onEachFeature: onFeatureClick,
@@ -53,7 +66,7 @@ d3.json("assets/unam-buildings.geojson").then(function (data) {
     zoomControl: true,
     minZoom: 10,
     maxZoom: 16,
-    layers: [osm, unam1953, buildingLayer],
+    layers: [osm, ciudad_Universitaria_1982, buildingLayer],
   });
 
   //Base layer
@@ -68,6 +81,8 @@ d3.json("assets/unam-buildings.geojson").then(function (data) {
     "UNAM 1951 (Sept. 19)": unam1951b,
     "UNAM 1953": unam1953,
     "UNAM 1965": unam1965,
+    "Ciudad Universitaria": ciudad_Universitaria_1982,
+    "Inegi 2007": inegi_2007,
     Buildings: buildingLayer,
   };
 
