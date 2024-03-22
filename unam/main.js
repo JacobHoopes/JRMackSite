@@ -3,6 +3,7 @@ d3.json("assets/unam-buildings.geojson").then(function (data) {
 
   // const TILE_BASE = "https://scholarship.rrchnm.org/unam-tiles";
   const TILE_BASE = "./assets/tiles";
+  // if local, the following works: "./assets/tiles/"
 
   const buildingStyles = {
     color: "green",
@@ -66,7 +67,7 @@ d3.json("assets/unam-buildings.geojson").then(function (data) {
     zoomControl: true,
     minZoom: 10,
     maxZoom: 16,
-    layers: [osm, ciudad_Universitaria_1982, buildingLayer],
+    layers: [osm, unam1946, buildingLayer],
   });
 
   //Base layer
