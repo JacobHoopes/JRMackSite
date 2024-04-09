@@ -1,0 +1,13 @@
+{
+  "name": "Map Tiles",
+  "version": "1.1.0",
+  "description": "",
+  "attribution": "<a href=\"https://www.maptiler.com/engine/\">Rendered with MapTiler Engine</a>, non-commercial use only",
+  "type": "overlay",
+  "format": "png",
+  "minzoom": "12",
+  "maxzoom": "17",
+  "scale": "1.000000",
+  "bounds": [-99.22244894, 19.31249157, -99.16652035, 19.37510386],
+  "profile": "mercator"
+}

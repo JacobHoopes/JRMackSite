@@ -47,13 +47,17 @@ d3.json("assets/unam-buildings.geojson").then(function (data) {
   New tiles below
   */
 
-  const ciudad_Universitaria_1982 = new L.tileLayer(`./assets/tiles/CIUDAD_UNIVERSITARIA_1982.jpg`, {
+  // const ciudad_Universitaria_1982 = new L.tileLayer(`./assets/tiles/CIUDAD_UNIVERSITARIA_1982.jpg`, {
+  //   attribution: "Photograph attribution goes here",
+  // });
+
+  // const inegi_2007 = new L.tileLayer(`${TILE_BASE}/Inegi_2007_tiles2/{z}/{x}/{-y}.png`, {
+  //   attribution: "Photograph attribution goes here",
+  // });
+  const inegi_2007 = new L.tileLayer("https://api.maptiler.com/tiles/48b9774c-0c00-4203-9413-25f48163dace/{z}/{x}/{y}.png?key=5tBcXr4oTWJylHPgmnTH", {
     attribution: "Photograph attribution goes here",
   });
 
-  const inegi_2007 = new L.tileLayer(`./assets/tiles/INEGI_2007.jpg`, {
-    attribution: "Photograph attribution goes here",
-  });
 
   const buildingLayer = new L.geoJSON(buildings, {
     style: buildingStyles,
@@ -63,11 +67,11 @@ d3.json("assets/unam-buildings.geojson").then(function (data) {
   //MAP
   const map = L.map("map", {
     center: [19.326, -99.187],
-    zoom: 13,
+    zoom: 14,
     zoomControl: true,
-    minZoom: 10,
+    minZoom: 13,
     maxZoom: 16,
-    layers: [osm, unam1946, buildingLayer],
+    layers: [osm, inegi_2007, buildingLayer],
   });
 
   //Base layer
@@ -82,7 +86,7 @@ d3.json("assets/unam-buildings.geojson").then(function (data) {
     "UNAM 1951 (Sept. 19)": unam1951b,
     "UNAM 1953": unam1953,
     "UNAM 1965": unam1965,
-    "Ciudad Universitaria": ciudad_Universitaria_1982,
+    // "Ciudad Universitaria": ciudad_Universitaria_1982,
     "Inegi 2007": inegi_2007,
     Buildings: buildingLayer,
   };
