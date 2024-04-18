@@ -3,6 +3,6 @@ deployment:
   tasks:
     - export DEPLOYPATH=/home/jessic58/public_html/
     - git push origin main
-    - /bin/cp -R juxtapose $DEPLOYPATH
+    # - /bin/cp -R juxtapose $DEPLOYPATH
     - /bin/cp -R unam $DEPLOYPATH
     - /bin/cp index.html $DEPLOYPATH
