@@ -107,3 +107,14 @@ d3.json("assets/unam-buildings.geojson").then(function (data) {
     })
     .addTo(map);
 });
+
+
+// var element = document.getElementById("juxtapose1");
+
+// var sliderPosition = element.getAttribute("data-startingposition");
+
+// document.addEventListener('mousemove', (event) => {
+//   const mouseX = event.clientX;
+//   element.setAttribute("data-startingposition", `${(mouseX/innerWidth*100).toFixed(2)}%`);
+//   console.log(element.getAttribute('data-startingposition'))
+// })
