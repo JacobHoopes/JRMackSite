@@ -23,8 +23,8 @@ a {
 
 
 .responsive-diamond {
-  width: 100px;
-  height: 100px;
+  width: 10px;
+  height: 200px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -125,6 +125,7 @@ a {
 .rect:hover {
   transform: scale(1);
   transition: all 0.4s ease-in-out;
+  /* border: 2px red solid; */
 }
 
 .rect:hover::before {
@@ -152,4 +153,8 @@ a {
   /* background-color: red; */
   flex: 2.3;
   /* border: 2px red solid; */
+}
+
+.responsive-diamond-stack:nth-child(0) {
+  margin-top: 0px;
 }

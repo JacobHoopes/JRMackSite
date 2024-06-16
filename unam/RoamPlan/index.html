@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8" />
+    <title>UNAM Through the Years</title>
+  
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+    <script src="https://d3js.org/d3.v6.min.js"></script>
+  
+    <link href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" rel="stylesheet" />
+  
+    <script src="../vendor/L.Control.Opacity.js"></script>
+    <link href="../vendor/L.Control.Opacity.css" rel="stylesheet" />
+  
+    <link href="styles.css" rel="stylesheet" />
+    <link href="../../juxtapose/css/juxtapose.css" rel="stylesheet" />
+
+</head>
+<body>
+
+    <a href="../"><p>Go back</p></a>
+    <div id="jDiv" class="juxtapose" style="width: calc(100vw - 16px)" data-startingposition="43%">
+        <img id="img1" src="../assets/tiles/testImage1.png" data-label = "HELLO">
+        <img id="img2" src="../assets/tiles/testImage2.png">
+    </div>
+
+    <div class="flex-container" style="width: calc(100vw - 16px)" >
+        <button id="img" style="height: 30px" class="flex-item">
+            Testing Thing
+        </button>
+        <span id="color" class="flex-item">#FFFFFF</span>
+        <button id="change" style="height: 30px" class="flex-item">
+            Change Map
+        </button>
+        <!-- <a href="javascript:testing('img2');" id="img2" style="height: 30px" class="flex-item">
+            Sup
+        </a> -->
+    </div>
+
+    <div class="dropdown flex-container">
+        <button class="dropdown-btn">Dropdown</button>
+        <div class="dropdown-content">
+            <a href="../../index.html">HELLO</a>
+            <a href="../../index.html">HELLO</a>
+            <a href="../../index.html">HELLO</a>
+        </div>
+    </div>
+
+    <script>
+        const script = document.createElement('script');
+        script.src = "../../juxtapose/js/juxtapose.js?v=" + new Date().getTime();
+        document.head.appendChild(script);
+    </script>
+    <script src="RoamPlan.js"></script>
+</body>
+
+</html>

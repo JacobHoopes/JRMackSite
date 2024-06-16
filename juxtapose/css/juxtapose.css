@@ -195,12 +195,12 @@ div.jx-image.jx-right img {
 }
 
 
-.veritcal div.jx-image.jx-left {
+.vertical div.jx-image.jx-left {
 	top: 0;
 	background-position: top;
 }
 
-.veritcal div.jx-image.jx-left img {
+.vertical div.jx-image.jx-left img {
 	top: 0;
 }
 
@@ -209,7 +209,7 @@ div.jx-image.jx-right img {
 	background-position: bottom;
 }
 
-.veritcal div.jx-image.jx-right img {
+.vertical div.jx-image.jx-right img {
 	bottom: 0;
 }
 
@@ -280,8 +280,8 @@ div.jx-handle.transition {
 }
 
 /* Knight Lab Credit */
-a.jx-knightlab {
-	background-color: #000; /* IE 8 */
+/* a.jx-knightlab {
+	background-color: #000; IE 8
 	background-color: rgba(0,0,0,.25);
 	bottom: 0;
 	display: table;
@@ -292,9 +292,9 @@ a.jx-knightlab {
 	right: 0;
 	text-decoration: none;
 	z-index: 10;
-}
+} */
 
-a.jx-knightlab div.knightlab-logo {
+/* a.jx-knightlab div.knightlab-logo {
 	display: inline-block;
 	vertical-align: middle;
 	height: 8px;
@@ -306,10 +306,10 @@ a.jx-knightlab div.knightlab-logo {
 	top: -1.25px;
 	position: relative;
 	cursor: pointer;
-}
+} */
 
-a.jx-knightlab:hover {
-	background-color: #000; /* IE 8 */
+/* a.jx-knightlab:hover {
+	background-color: #000; IE 8
 	background-color: rgba(0,0,0,.35);
 }
 a.jx-knightlab:hover div.knightlab-logo {
@@ -328,7 +328,7 @@ a.jx-knightlab span.juxtapose-name {
 	vertical-align: middle;
 	line-height: normal;
 	text-shadow: none;
-}
+} */
 
 /* keyboard accessibility */
 div.jx-controller:focus,
