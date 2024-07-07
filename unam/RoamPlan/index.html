@@ -12,62 +12,70 @@
     <script src="../vendor/L.Control.Opacity.js"></script>
     <link href="../vendor/L.Control.Opacity.css" rel="stylesheet" />
 
-    <script src="RoamPlan.js"></script>
+    <!-- <script src="RoamPlan.js"></script> -->
   
-    <link href="styles.css" rel="stylesheet" />
-    <link href="../../juxtapose/css/juxtapose.css" rel="stylesheet" />
+    <!-- <link href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" rel="stylesheet" /> -->
+  
+  
+    <link href="./styles.css" rel="stylesheet" />
+    <!-- <link href="../../juxtapose/css/juxtapose.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+    integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
+    crossorigin=""/>
+
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+    integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
+    crossorigin=""></script> -->
+
+    
 </head>
 <body>
-    <div id="map" style="height: 200px"></div>
-    <!-- <div style="height:20px"></div>
-      <div id="juxtapose1" class="juxtapose" data-startingposition="33%">
-        <img src="../assets/tiles/INEGI_2007.jpg" data-label="Name 1" alt="Image 1">
-        <img src="../assets/tiles/CIUDAD_UNIVERSITARIA_1982.jpg" data-label="Ciudad U-" alt="Image 2">
-    </div> -->
-    <div class="maps"> 
-        <div style="height: 25vh; position: relative; max-width: 500px; margin:auto">
-            <div id="img1" class="img1">
-                <img style="width: 100%; max-height: 50vh" src="../assets/tiles/testImage1.png">
-            </div>
-            <div id="img2" class="img2">
-                <img style="width: 100%; max-height: 50vh" src="../assets/tiles/testImage2.png">
-            </div>
+    <div id="maps" class="maps"> 
+        <div id="rMap" class="img1" style="height:100%">
+            <!-- <img style="width: 100%; max-height: 50vh" src="../assets/tiles/testImage1.png"> -->
         </div>
-
-        <div class="flex-item" style="margin: auto; height: 0; max-width: 500px">
-            <input type="range" min="0%" max="100%" value="50%" class="slider" id="cropSlider" style="width: 100%">
+        <div id="lMap" class="img2" style="height:100%">
+            <!-- <img style="width: 100%; max-height: 50vh" src="../assets/tiles/testImage2.png"> -->
+        </div>
+        <div>
+            <input type="range" min="0%" max="100%" value="50%" class="slider" id="cropSlider" style="width: calc(100% + 20px); position: absolute; right: -12px; top: 2vh">
             <p id="cropText"> 50%</p>
+    
         </div>
     </div>
+    <div class="flex-item">
+        <!-- hello -->
+    </div>
+
+    
+    <!-- <div id="map"></div> -->
     <div class="options">
-        <!-- <div class="flex-container">
-            <div class="flex-item">
-                <p id="location_">Location:</p> 
-            </div>
-            <div class="flex-item">
-                <p id="year1_">1954</p>
-                <p id="year2_">1954</p>
-            </div>
-            <div class="flex-item">
-                <p id="magnification_">5</p>
-            </div>
-            
-        </div> -->
+
+        <p id="text">HELLO</p>
+        <p id="text2">HELLO</p>
         <div class="flex-container">
             <div class="flex-item">
                 <p>Year 1</p>
                 <select name="Year1" id="year1">
-                    <option value="1954">1954</option>
-                    <option value="1954">1964</option>
-                    <option value="1954">1994</option>
+                    <option value=unam1946>UNAM 1946</option>
+                    <option value=unam1951a>UNAM 1951 (Sept. 14)</option>
+                    <option value=unam1951b>UNAM 1951 (Sept. 19)</option>
+                    <option value=unam1953>UNAM 1953</option>
+                    <option value=unam1965>UNAM 1965</option>
+                    <option value=ciudad_Universitaria_1982>Ciudad Universitaria</option>
+                    <option value=inegi_2007>Inegi 2007</option>
                 </select>
             </div>
             <div class="flex-item">
                 <p>Year 2</p>
-                <select name="Year1" id="year1">
-                    <option value="1954">1954</option>
-                    <option value="1954">1964</option>
-                    <option value="1954">1994</option>
+                <select name="Year2" id="year2">
+                    <option value=unam1946>UNAM 1946</option>
+                    <option value=unam1951a>UNAM 1951 (Sept. 14)</option>
+                    <option value=unam1951b>UNAM 1951 (Sept. 19)</option>
+                    <option value=unam1953>UNAM 1953</option>
+                    <option value=unam1965>UNAM 1965</option>
+                    <option value=ciudad_Universitaria_1982>Ciudad Universitaria</option>
+                    <option value=inegi_2007>Inegi 2007</option>
                 </select>
             </div>
         </div>
@@ -86,7 +94,7 @@
             </div>
         </div>
     </div>
-    <script src="../../juxtapose/js/juxtapose.js"></script>
+    <script src="RoamPlan.js"></script>
 </body>
 
 </html>

@@ -23,16 +23,16 @@ div:has(.juxtapose) {
     display: flux;
 }
 
-.juxtapose {
+/* .juxtapose {
     max-height: 50vh;
     max-width: 500px;
     margin-left: auto;
     margin-right: auto;
     margin-top: 20px;
-}
+} */
 
 div {
-    background-color: rgba(175, 134, 134, 0.343);
+    /* background-color: rgba(175, 134, 134, 0.343); */
     width: 100%;
     /* box-sizing: border-box; */
     /* padding: 5px; */
@@ -118,37 +118,48 @@ button:hover {
     /* height: 100%; */
     /* width: 100%; */
     /* background: #d3d3d3; */
-    opacity: 0.9;
+    opacity: 1;
     -webkit-transition: .2s; /* 0.2 seconds transition on hover */
     transition: opacity .2s;
+    /* background-color: black; */
+    border: 2px solid black;
 
     /* transform: rotate(270deg); */
 }
 
 .slider:hover {
     /* opacity: 1; Fully shown on mouse-over */
+    border: red;
 }
 
 .slider::-webkit-slider-thumb {
     -webkit-appearance: none; /* Override default look */
     appearance: none;
-    width: 15px; /* Set a specific slider handle width */
-    height: 50px; /* Slider handle height */
+    width: 20px; /* Set a specific slider handle width */
+    height: 7vh; /* Slider handle height */
     border-radius: 10%;
     background: #000000; /* Green background */
     cursor: pointer; /* Cursor on hover */
+    /* border: 1px solid red; */
 }
 
 .slider::-moz-range-thumb {
     width: 15px; /* Set a specific slider handle width */
     height: 50px; /* Slider handle height */
-    background: #000000; /* Green background */
+    background: #650f0f; 
     cursor: pointer; /* Cursor on hover */
 }
 
 .maps {
     position: absolute;
     top: 0;
+    height: 50vh; 
+    width: 80%;
+    position: relative; 
+    max-width: 500px; 
+    margin-top: 30px;
+    /* padding: 10px; */
+    border: 2px solid black;
 }
 
 .options {
@@ -195,5 +206,9 @@ select {
     width: 100%;
     text-align: center;
     text-decoration: none;
-    font-size: 30px;
+    font-size: 20px;
+}
+
+#map {
+    height: 400px;
 }
