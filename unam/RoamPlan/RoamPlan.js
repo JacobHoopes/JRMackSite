@@ -170,37 +170,65 @@ d3.json("../assets/unam-buildings.geojson").then(function (data) {
       attribution: '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors',
     });
   
-    const unam1951a = new L.tileLayer(`${TILE_BASE}/UNAM_14Sept1951_tiles/{z}/{x}/{-y}.png`, {
+    const Lunam1951a = new L.tileLayer(`${TILE_BASE}/UNAM_14Sept1951_tiles/{z}/{x}/{-y}.png`, {
       attribution: "Photograph attribution goes here",
     });
+
+    const Runam1951a = new L.tileLayer(`${TILE_BASE}/UNAM_14Sept1951_tiles/{z}/{x}/{-y}.png`, {
+        attribution: "Photograph attribution goes here",
+      });
   
-    const unam1951b = new L.tileLayer(`${TILE_BASE}/UNAM_19Sept1951_tiles/{z}/{x}/{-y}.png`, {
+    const Lunam1951b = new L.tileLayer(`${TILE_BASE}/UNAM_19Sept1951_tiles/{z}/{x}/{-y}.png`, {
       attribution: "Photograph attribution goes here",
     });
+
+    const Runam1951b = new L.tileLayer(`${TILE_BASE}/UNAM_19Sept1951_tiles/{z}/{x}/{-y}.png`, {
+        attribution: "Photograph attribution goes here",
+      });
   
-    const unam1946 = new L.tileLayer(`${TILE_BASE}/UNAM_1946_tiles/{z}/{x}/{-y}.png`, {
+    const Lunam1946 = new L.tileLayer(`${TILE_BASE}/UNAM_1946_tiles/{z}/{x}/{-y}.png`, {
       attribution: "Photo taken in 1946 by ___",
     });
+
+    const Runam1946 = new L.tileLayer(`${TILE_BASE}/UNAM_1946_tiles/{z}/{x}/{-y}.png`, {
+        attribution: "Photo taken in 1946 by ___",
+      });
   
-    const unam1953 = new L.tileLayer(`${TILE_BASE}/UNAM_Feb1953_tiles/{z}/{x}/{-y}.png`, {
+    const Lunam1953 = new L.tileLayer(`${TILE_BASE}/UNAM_Feb1953_tiles/{z}/{x}/{-y}.png`, {
       attribution: "Photo taken in 1953 by ___",
     });
+
+    const Runam1953 = new L.tileLayer(`${TILE_BASE}/UNAM_Feb1953_tiles/{z}/{x}/{-y}.png`, {
+        attribution: "Photo taken in 1953 by ___",
+      });
   
-    const unam1965 = new L.tileLayer(`${TILE_BASE}/UNAM1965_tiles/{z}/{x}/{-y}.png`, {
+    const Lunam1965 = new L.tileLayer(`${TILE_BASE}/UNAM1965_tiles/{z}/{x}/{-y}.png`, {
       attribution: "Photograph attribution goes here",
     });
+
+    const Runam1965 = new L.tileLayer(`${TILE_BASE}/UNAM1965_tiles/{z}/{x}/{-y}.png`, {
+        attribution: "Photograph attribution goes here",
+      });
   
     /*
     New tiles below
     */
   
-    const ciudad_Universitaria_1982 = new L.tileLayer(`./assets/tiles/CIUDAD_UNIVERSITARIA_1982.jpg`, {
+    const Lciudad_Universitaria_1982 = new L.tileLayer(`./assets/tiles/CIUDAD_UNIVERSITARIA_1982.jpg`, {
       attribution: "Photograph attribution goes here",
+    });
+
+    const Rciudad_Universitaria_1982 = new L.tileLayer(`./assets/tiles/CIUDAD_UNIVERSITARIA_1982.jpg`, {
+        attribution: "Photograph attribution goes here",
     });
   
-    const inegi_2007 = new L.tileLayer(`./assets/tiles/INEGI_2007.jpg`, {
+    const Linegi_2007 = new L.tileLayer(`./assets/tiles/INEGI_2007.jpg`, {
       attribution: "Photograph attribution goes here",
     });
+
+    const Rinegi_2007 = new L.tileLayer(`./assets/tiles/INEGI_2007.jpg`, {
+        attribution: "Photograph attribution goes here",
+      });
   
     const lbuildingLayer = new L.geoJSON(buildings, {
       style: buildingStyles,
@@ -210,7 +238,7 @@ d3.json("../assets/unam-buildings.geojson").then(function (data) {
     const rbuildingLayer = new L.geoJSON(buildings, {
         style: buildingStyles,
         onEachFeature: onFeatureClick,
-      });
+    });
   
     //MAP
 
@@ -218,28 +246,31 @@ d3.json("../assets/unam-buildings.geojson").then(function (data) {
         center: [19.326, -99.187],
         zoom: 15,
         zoomControl: false,
-        minZoom: 10,
+        minZoom: 13,
         maxZoom: 16,
-        layers: [osm2, unam1946, lbuildingLayer],
+        layers: [osm2, lbuildingLayer, Lunam1946],
     });
 
     const rightMap = L.map("rMap", {
         center: [19.326, -99.187],
         zoom: 15,
         zoomControl: false,
-        minZoom: 10,
+        minZoom: 13,
         maxZoom: 16,
-        layers: [osm, unam1953, rbuildingLayer],
+        layers: [osm, rbuildingLayer, Runam1953],
     });
 
     // leftMap.dragging.disable();
     // rightMap.dragging.disable();
 
-    leftMap.addEventListener("click", function (event) {
-        rightMap.setCenter(leftMap.getCenter());
-    })
+    // leftMap.addEventListener("click", function (event) {
+    //     rightMap.setCenter(leftMap.getCenter());
+    // })
 
-    "mousemove touchmove "
+    // "mousemove touchmove".split(" ").forEach(function(e) {
+    //     window.addEventListener(e, mouseMoveHandler, false)
+    // })
+
     leftMap.addEventListener("mousemove", function(event) {
         var text = document.getElementById("text");
         // var leftMap = document.getElementById("lMap")
@@ -252,14 +283,88 @@ d3.json("../assets/unam-buildings.geojson").then(function (data) {
         // var bounds = L.latLng(leftMap.getCenter).toBounds();
         // rightMap.fitBounds(bounds, {animation: false})
         leftMap.setView(rightMap.getCenter(), rightMap.getZoom(), {animation: true});
+        // leftMap.removeLayer(unam)
     });
   
-    year1.oninput = function() {
-        const newLayer = year1.value;
-        var text = document.getElementById("text2");
-        text.innerHTML = newLayer;
-        leftMap.setlayers([osm, newLayer, lbuildingLayer])
+    var Llayers = [
+        Lunam1946,
+        Lunam1951a,
+        Lunam1951b,
+        Lunam1953,
+        Lunam1965,
+        Lciudad_Universitaria_1982,
+        Linegi_2007
+    ]
 
+    var Rlayers = [
+        Runam1946,
+        Runam1951a,
+        Runam1951b,
+        Runam1953,
+        Runam1965,
+        Rciudad_Universitaria_1982,
+        Rinegi_2007
+    ]
+
+    year1.oninput = function() {
+        var index = year1.selectedIndex;
+        
+        var text = document.getElementById("text2");
+        text.innerHTML = year1.value;
+
+        var length = 0;
+        leftMap.eachLayer(function(count) {
+            length ++;
+        })
+        var newLength = 0;
+        leftMap.eachLayer(function(layer) {
+            if (newLength == length - 1) {
+                text.innerHTML = text.innerHTML + " " +  index;
+                leftMap.removeLayer(layer);
+                leftMap.addLayer(Llayers[index]);
+            }
+            newLength++;
+        })
+    }
+
+    year2.oninput = function() {
+        var index = year2.selectedIndex;
+        
+        // var text = document.getElementById("text2");
+        // text.innerHTML = year2.value;
+
+        var length = 0;
+        rightMap.eachLayer(function(count) {
+            length ++;
+        })
+        var newLength = 0;
+        rightMap.eachLayer(function(layer) {
+            if (newLength == length - 1) {
+                // text.innerHTML = text.innerHTML + " " +  index;
+                rightMap.removeLayer(layer);
+                rightMap.addLayer(Rlayers[index]);
+            }
+            newLength++;
+        })
+    }
+
+    magnification.oninput = function() {
+        var val = this.value;
+        leftMap.setZoom(val);
+        rightMap.setZoom(val);
+    }
+
+    currentLocation.oninput = function() {
+        if (currentLocation.selectedIndex == 0) {
+            leftMap.setView([19.3318, -99.1918], 16);
+            rightMap.setView([19.3318, -99.1918], 16);
+        } else if (currentLocation.selectedIndex == 1) {
+            leftMap.setView([19.3334, -99.1797], 16);
+            rightMap.setView([19.3334, -99.1797], 16);
+        } else if (currentLocation.selectedIndex == 2) {
+            leftMap.setView([19.3283, -99.1863], 16);
+            rightMap.setView([19.3283, -99.1863], 16);
+        }
     }
 
     //Base layer
@@ -269,20 +374,21 @@ d3.json("../assets/unam-buildings.geojson").then(function (data) {
     };
   
     //Additional layers
-    // const Map_AddLayer = {
-    //   "UNAM 1946": unam1946,
-    //   "UNAM 1951 (Sept. 14)": unam1951a,
-    //   "UNAM 1951 (Sept. 19)": unam1951b,
-    //   "UNAM 1953": unam1953,
-    //   "UNAM 1965": unam1965,
-    //   "Ciudad Universitaria": ciudad_Universitaria_1982,
-    //   "Inegi 2007": inegi_2007,
-    //   Buildings: buildingLayer,
-    // };
+    const Map_AddLayer = {
+      "UNAM 1946": unam1946,
+      "UNAM 1951 (Sept. 14)": unam1951a,
+      "UNAM 1951 (Sept. 19)": unam1951b,
+      "UNAM 1953": unam1953,
+      "UNAM 1965": unam1965,
+      "Ciudad Universitaria": ciudad_Universitaria_1982,
+      "Inegi 2007": inegi_2007,
+      Buildings: buildingLayer,
+    };
   
     //LayerControl
     // Replace `Map_BaseLayer` in the call below with `null` to remove the
     // radio switch for the base layer if desired.
+
     L.control
       .layers(Map_BaseLayer, Map_AddLayer, {
         collapsed: false,
