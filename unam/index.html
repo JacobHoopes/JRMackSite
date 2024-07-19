@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="ja">
+<html lang="ja" style="height:100%">
 
 <head>
   <meta charset="UTF-8" />
@@ -17,24 +17,25 @@
   <link href="../juxtapose/css/juxtapose.css" rel="stylesheet" />
 </head>
 
-  <body>
-    <header>
+  <body style="height:100%">
+    <header style="height:20%">
       <h1>Mapping University City</h1>
       <!-- <p>A demo of the <a href="https://rrchnm.org">RRCHNM</a>.</p> -->
       <!-- <p>by Jessica R. Mack</p> -->
     </header>
     <main>
-      <script>
-        const parent = document.getElementById('parent');
-        const child = document.getElementById('child');
+      <div style="height:10%" class="flex-container">
+        <!-- <script>
+          const parent = document.getElementById('parent');
+          const child = document.getElementById('child');
 
-        child.addEventListener('mouseenter', () => {
-          parent.style.backgroundColor = '#2ecc71';
-        })
-        child.addEventListener('mouseleave', () => {
-          parent.style.backgroundColor = '#3498db';
-        }) 
-      </script>
+          child.addEventListener('mouseenter', () => {
+            parent.style.backgroundColor = '#2ecc71';
+          })
+          child.addEventListener('mouseleave', () => {
+            parent.style.backgroundColor = '#3498db';
+          }) 
+        </script> -->
       <!-- <h1 style="height: 5vh">
         UNAM
       </h1>
@@ -66,19 +67,19 @@
         <div class="responsive-diamond">
           <div class="rect"></div>
         </div> -->
+        <div class="flex-item"><a href="RoamPlan/"><p style="padding-left: 20px; text-decoration: underline; color: black"> Another Layout </p></a></div>
+        <div class="flex-item"><a class="flex-item" href=".."><p  style="padding-left: 20px; text-decoration: underline; color:black">Home</p></a></div>
+      
       </div>
-      <div id="map"></div>
-      <div style="height:20px"></div>
-      <div id="juxtapose1" class="juxtapose" data-startingposition="33%">
+      <div id="map" style="height:60vh"></div>
+      <!-- <div style="height:20px"></div> -->
+      <!-- <div id="juxtapose1" class="juxtapose" data-startingposition="33%">
         <img src="./assets/tiles/testImage1.png" data-label="Name 1" alt="Image 1">
         <img src="./assets/tiles/testImage2.png" data-label="Ciudad U-" alt="Image 2">
-      </div>
-      <a href="RoamPlan/"><p style="padding: 50px; text-decoration: underline"> Another Layout </p></a>
+      </div> -->
       
-      
-      <p><a href="..">(Go back to home)</a></p>
     </main>
-    <script src="../juxtapose/js/juxtapose.js"></script>
+    <!-- <script src="../juxtapose/js/juxtapose.js"></script> -->
     <script src="main.js"></script>
   </body>
 
