@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="ja">
+<html lang="en">
 <head>
     <meta charset="UTF-8" />
     <title>UNAM Through the Years</title>
@@ -26,40 +26,31 @@
     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
     integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
     crossorigin=""></script> -->
-
-    
 </head>
-<body>
+<body >
+    
     <div id="maps" class="maps"> 
         <div id="rMap" class="img1" style="height:100%">
-            <!-- <img style="width: 100%; max-height: 50vh" src="../assets/tiles/testImage1.png"> -->
         </div>
         <div id="lMap" class="img2" style="height:100%">
-            <!-- <img style="width: 100%; max-height: 50vh" src="../assets/tiles/testImage2.png"> -->
         </div>
-        <div>
-            <input type="range" min="0%" max="100%" value="50%" class="slider" id="cropSlider" style="width: calc(100% + 20px); position: absolute; right: -12px; top: 2vh">
-            <p id="cropText"> 50%</p>
+        <div style="width: calc(100% + 20px); position: absolute; right: -8px; top: 53vh; text-align: center">
+            <input type="range" min="0%" max="100%" value="50%" class="slider" id="cropSlider" style="width:100%">
+            <p id="cropText">50%</p>
     
         </div>
     </div>
-    <div class="flex-item">
-        <!-- hello -->
-    </div>
-
     
-
-    
-    <!-- <div id="map"></div> -->
     <div class="options">
+        <div style="text-align: center">
+            <p id="text">HELLO</p>
+            <p id="text2">HELLO</p>
+            <p><a href="../">Go back</a></p>
+        </div>
 
-        <p id="text">HELLO</p>
-        <p id="text2">HELLO</p>
-
-        <p><a href="../">Go back</a></p>
         <div class="flex-container">
             <div class="flex-item">
-                <p>Year 1</p>
+                <!-- <p>Year 1</p> -->
                 <select name="Year1" id="year1">
                     <option value=unam1946>UNAM 1946</option>
                     <option value=unam1951a>UNAM 1951 (Sept. 14)</option>
@@ -71,7 +62,7 @@
                 </select>
             </div>
             <div class="flex-item">
-                <p>Year 2</p>
+                <!-- <p>Year 2</p> -->
                 <select name="Year2" id="year2">
                     <option value=unam1946>UNAM 1946</option>
                     <option value=unam1951a>UNAM 1951 (Sept. 14)</option>
@@ -85,15 +76,16 @@
         </div>
         <div class="flex-container">
             <div class="flex-item"> 
-                <p>Location</p>
+                <!-- <p>Location</p> -->
                 <select name="currentLocation" id="currentLocation">
-                    <option value="location1">Arena</option>
-                    <option value="location1">Rayos Cósmicos</option>
-                    <option value="location1">Estadio de Practicas</option>
+                    <option value="location1">Copilco el Alto</option>
+                    <option value="location2">Rayos Cósmicos</option>
+                    <option value="location3">Estadio de Practicas</option>
+                    <option value="location4">Arena</option>
                 </select> 
             </div>
             <div class="flex-item">
-                <p>Current Magnification</p>
+                <!-- <p>Current Magnification</p> -->
                 <input type="range" id="magnification" min="13" max="16" style="width: 90%">
             </div>
         </div>
