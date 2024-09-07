@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <title>The University from Above</title>
+    
+        <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+        <script src="https://d3js.org/d3.v6.min.js"></script>
+    
+        <link href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" rel="stylesheet" />
+        <!-- <script src="Aug6Plan.js"></script> -->
+
+
+        <script src="../vendor/L.Control.Opacity.js"></script>
+        <link href="../vendor/L.Control.Opacity.css" rel="stylesheet" />
+
+        <link href="styles.css" rel="stylesheet"> 
+
+    </head>
+    <body style="margin: 0; height: 100vh; background-color:rgba(255, 255, 255, 0.278)">
+        <!-- <div style="height: 50%; background-color:antiquewhite; border: solid 2px black; display: flex; justify-content: center; position: relative">
+            <div style="width: 44%; height: 100%"><a href="location1/"><div class="map-box" style="top:63%; left:49%"></div></a></div>
+            <div style="width: 44%; height: 100%"><a href="location2/"><div class="map-box" style="top:65%; left:63%"></div></a></div>
+            <div style="width: 44%; height: 100%"><a href="location2/"><div class="map-box" style="top:40%; left:63%"></div></a></div>
+           
+            <img src="INEGI_2007.jpg" style="height: 100%; position: absolute">
+            
+        </div>
+        <div style="height: 40%; background-color:antiquewhite; border: solid 2px red; padding: 20px">
+            <div><a href="./location1/">go to Location 1</a></div>
+            <p>This is a map of the region around UNAM.</p>
+            <p>Click any of the boxes on the map to explore specific areas.</p>
+        </div> -->
+        <div style="height: 50%; display:flex; align-items: center;" class="maps-box">
+            <div id="maps" class="maps">
+                <div id="rMap" class="img1" style="height:100%">
+                </div>
+                <div id="lMap" class="img2" style="height:0%">
+                </div>
+                <!-- <div style="width: 99%; position: absolute; top: 53vh; text-align: center">
+                    <input type="range" min="0%" max="100%" value="50%" class="slider" id="cropSlider" style="width:100%">
+                    <p id="cropText">50%</p>
+            
+                </div> -->
+            </div>
+            
+        </div>
+        <div class="options" style="width:100%; padding-top: 0px">
+            <div style="text-align: center;" class="flex-item">
+                <!-- <p id="text">HELLO</p> -->
+                <p id="text2"></p>
+                <p><a href="../">Go back</a></p>
+            </div>
+        </div>
+    <script src="Aug6Plan.js"></script>
+    </body>
+</html>
+

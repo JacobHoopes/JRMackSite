@@ -1,0 +1,89 @@
+html {
+    box-sizing:content-box;
+}
+
+
+div {
+    /* background-color: rgba(175, 134, 134, 0.343); */
+    width: 100%;
+    /* box-sizing: border-box; */
+    /* padding: 0px; */
+}
+
+.flex-container {
+    display: flex;
+    align-items: center;
+    /* flex-direction: row; */
+}
+
+.flex-item {
+    flex: 1;
+    /* margin: 10px; */
+    /* border: 2px solid black; */
+    text-align: center;
+    /* height: 200px; */
+}   
+
+/* .map-box {
+    z-index: 1; 
+    font-size: 20px; 
+    margin-right: 59px;
+    height: 50px; 
+    width: 50px;
+    position: absolute;
+    background-color:rgba(127, 255, 212, 0.161);
+    transition: 0.5s ease;
+    border: 2px green solid;
+} */
+
+.map-box:hover {
+    /* animation: ease-in-out 2s; */
+    background-color:rgba(127, 255, 212, 0.492)
+}
+
+.maps-box {
+    width: 50vw;
+    background-color:red;
+}
+
+.maps {
+    position: absolute;
+    /* top: 10px; */
+    height: 50vh; 
+    max-width: 100%;
+    display: flex;
+    align-items: center;
+    
+
+    /* position: relative;  */
+    /* max-width: calc(100% - 20px);  */
+    /* margin-top: 30px; */
+    /* padding: 10px; */
+    /* border: 1px solid black; */
+}
+
+.img1 {
+    position: absolute; 
+    clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%); 
+    /* border: 2px solid black; */
+    /* border-right: 5px solid black; */
+}
+
+.img2 {
+    position: absolute; 
+    clip-path: polygon(0% 50%, 50% 50%, 50% 100%, 0% 100%); 
+    /* border: 2px solid red; */
+    /* border-right: 5px solid black; */
+}
+
+.img2-2 {
+    position: absolute;
+    clip-path: polygon(0% 0%, 50% 0%, 50% 100%, 0% 100%); 
+}
+
+/* .leaflet-layer,
+.leaflet-control-zoom-in,
+.leaflet-control-zoom-out,
+.leaflet-control-attribution {
+  filter: invert(100%) hue-rotate(180deg) brightness(150%) contrast(90%);
+} */

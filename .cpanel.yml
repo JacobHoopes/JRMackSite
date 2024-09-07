@@ -1,0 +1,6 @@
+---
+deployment: 
+  tasks:
+    - export DEPLOYPATH=/home/jessic58/public_html/
+    - /bin/cp -R unam $DEPLOYPATH
+    - /bin/cp index.html $DEPLOYPATH

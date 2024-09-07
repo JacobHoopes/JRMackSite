@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ja" style="height:100%">
+
+<head>
+  <meta charset="UTF-8" />
+  <title>UNAM Exploration</title>
+
+  <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+  <script src="https://d3js.org/d3.v6.min.js"></script>
+
+  <link href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" rel="stylesheet" />
+
+  <script src="vendor/L.Control.Opacity.js"></script>
+  <link href="vendor/L.Control.Opacity.css" rel="stylesheet" />
+
+  <link href="main.css" rel="stylesheet" />
+  <link href="../juxtapose/css/juxtapose.css" rel="stylesheet" />
+</head>
+
+  <body style="height:100%; overflow: hidden">
+    <header style="height:20%">
+      <h1>Mapping University City</h1>
+      <!-- <p>A demo of the <a href="https://rrchnm.org">RRCHNM</a>.</p> -->
+      <!-- <p>by Jessica R. Mack</p> -->
+    </header>
+    <main>
+      <div style="height:10%" class="flex-container">
+        <div class="flex-item"><a class="flex-item" href=".."><p  style="padding-left: 20px; text-decoration: underline; color:black">Home</p></a></div>
+        <div class="flex-item"><a href="RoamPlan/"><p style="padding-left: 20px; text-decoration: underline; color: black"> Roam Plan </p></a></div>
+        <div class="flex-item"><a class="flex-item" href="Aug6Plan/"><p  style="padding-left: 20px; text-decoration: underline; color:black">Aug 6 Plan</p></a></div>
+      
+      </div>
+      <div id="map" style="height:60vh"></div>
+      
+    </main>
+    <script src="main.js"></script>
+  </body>
+
+</html>
