@@ -127,9 +127,9 @@ d3.json("../../assets/NewUnamBuildings.geojson").then(function (data) {
       zoom: 16,
       zoomControl: false,
       dragging: false,
-      minZoom: 14,
+      minZoom: 16,
       maxZoom: 16,
-      layers: [osm2, Lunam1951a],
+      layers: [osm2, Lunam1951b],
   });
 
   const rightMap = L.map("rMap", {
@@ -138,9 +138,9 @@ d3.json("../../assets/NewUnamBuildings.geojson").then(function (data) {
       zoomControl: false,
       // moveControl: false,
       dragging: false,
-      minZoom: 14,
+      minZoom: 16,
       maxZoom: 16,
-      layers: [osm, Runam1953],
+      layers: [osm, Runam1965],
   });
 
   // leftMap.dragging.disable();
@@ -220,15 +220,15 @@ d3.json("../../assets/NewUnamBuildings.geojson").then(function (data) {
   //   this.position.updateHTML(lat, lng);
   // });
   // leftMap.on('dragstart')
-  var Layers = [
-    "unam1946",
-    "unam1951a",
-    "unam1951b",
-    "unam1953",
-    "unam1965",
-    "ciudad_Universitaria_1982",
-    "inegi_2007"
-  ]
+  // var Layers = [
+  //   "unam1946",
+  //   "unam1951a",
+  //   "unam1951b",
+  //   "unam1953",
+  //   "unam1965",
+  //   "ciudad_Universitaria_1982",
+  //   "inegi_2007"
+  // ]
 
   var Llayers = [
       Lunam1946,
@@ -250,109 +250,130 @@ d3.json("../../assets/NewUnamBuildings.geojson").then(function (data) {
       Rinegi_2007
   ]
 
-  var currentMapIndex = 2;
-  var newMapIndex = 3;
+  // var currentMapIndex = 2;
+  // var newMapIndex = 3;
   
-  cropSlider.oninput = function() {
+  // cropSlider.oninput = function() {
 
-    var cropText = document.getElementById("cropText");
-    var text = document.getElementById("text");
-    let newCrop = this.value * 3 % 100.1;
+  //   var cropText = document.getElementById("cropText");
+  //   var text = document.getElementById("text");
+  //   let newCrop = this.value * 3 % 100.1;
     
-    var LEFTMap = document.getElementById("lMap");
-    LEFTMap.style.clipPath = `polygon(0% 0%, ${(newCrop) + "%"} 0%, ${(newCrop) + "%"} 100%, 0% 100%)`
+  //   var LEFTMap = document.getElementById("lMap");
+  //   LEFTMap.style.clipPath = `polygon(0% 0%, ${(newCrop) + "%"} 0%, ${(newCrop) + "%"} 100%, 0% 100%)`
 
-    cropText.innerHTML = `${(this.value) + "%"}`;
-    var length = 0;
-    var newLength = 0;
-    if (this.value <= 33 && currentMapIndex != 0) {
-      text.innerHTML = "SOMETHING"
-      currentMapIndex = 0;
-      newMapIndex = 1;
+  //   cropText.innerHTML = `${(this.value) + "%"}`;
+  //   var length = 0;
+  //   var newLength = 0;
+  //   if (this.value <= 33 && currentMapIndex != 0) {
+  //     text.innerHTML = "SOMETHING"
+  //     currentMapIndex = 0;
+  //     newMapIndex = 1;
 
-      leftMap.eachLayer(function() {
-          length ++;
-      })
-      leftMap.eachLayer(function(layer) {
-          if (newLength == length - 1) {
-              // text.innerHTML = text.innerHTML + " " +  index;
-              leftMap.removeLayer(layer);
-              leftMap.addLayer(Llayers[newMapIndex]);
+  //     leftMap.eachLayer(function() {
+  //         length ++;
+  //     })
+  //     leftMap.eachLayer(function(layer) {
+  //         if (newLength == length - 1) {
+  //             // text.innerHTML = text.innerHTML + " " +  index;
+  //             leftMap.removeLayer(layer);
+  //             leftMap.addLayer(Llayers[newMapIndex]);
 
-          }
-          newLength++;
-      })
-      newLength = 0;
-      rightMap.eachLayer(function(layer) {
-          if (newLength == length - 1) {
-              // text.innerHTML = text.innerHTML + " " +  index;
-              rightMap.removeLayer(layer);
-              rightMap.addLayer(Rlayers[currentMapIndex]);
-          }
-          newLength++;
-      })
-    } else if (this.value > 33 && this.value < 66 && currentMapIndex != 1) {
-      text.innerHTML = "SOMETHING ELSE"
-      currentMapIndex = 1;
-      newMapIndex = 2;
+  //         }
+  //         newLength++;
+  //     })
+  //     newLength = 0;
+  //     rightMap.eachLayer(function(layer) {
+  //         if (newLength == length - 1) {
+  //             // text.innerHTML = text.innerHTML + " " +  index;
+  //             rightMap.removeLayer(layer);
+  //             rightMap.addLayer(Rlayers[currentMapIndex]);
+  //         }
+  //         newLength++;
+  //     })
+  //   } else if (this.value > 33 && this.value < 66 && currentMapIndex != 1) {
+  //     text.innerHTML = "SOMETHING ELSE"
+  //     currentMapIndex = 1;
+  //     newMapIndex = 2;
 
-      leftMap.eachLayer(function() {
-          length ++;
-      })
-      leftMap.eachLayer(function(layer) {
-          if (newLength == length - 1) {
-              // text.innerHTML = text.innerHTML + " " +  index;
-              leftMap.removeLayer(layer);
-              leftMap.addLayer(Llayers[newMapIndex]);
+  //     leftMap.eachLayer(function() {
+  //         length ++;
+  //     })
+  //     leftMap.eachLayer(function(layer) {
+  //         if (newLength == length - 1) {
+  //             // text.innerHTML = text.innerHTML + " " +  index;
+  //             leftMap.removeLayer(layer);
+  //             leftMap.addLayer(Llayers[newMapIndex]);
 
-          }
-          newLength++;
-      })
-      newLength = 0;
-      rightMap.eachLayer(function(layer) {
-          if (newLength == length - 1) {
-              // text.innerHTML = text.innerHTML + " " +  index;
-              rightMap.removeLayer(layer);
-              rightMap.addLayer(Rlayers[currentMapIndex]);
-          }
-          newLength++;
-      })
-    } else if (this.value >= 66 && currentMapIndex != 2) {
-      text.innerHTML = "SOMETHING ELSE AGAIN"
-      currentMapIndex = 2;
-      newMapIndex = 3;
+  //         }
+  //         newLength++;
+  //     })
+  //     newLength = 0;
+  //     rightMap.eachLayer(function(layer) {
+  //         if (newLength == length - 1) {
+  //             // text.innerHTML = text.innerHTML + " " +  index;
+  //             rightMap.removeLayer(layer);
+  //             rightMap.addLayer(Rlayers[currentMapIndex]);
+  //         }
+  //         newLength++;
+  //     })
+  //   } else if (this.value >= 66 && currentMapIndex != 2) {
+  //     text.innerHTML = "SOMETHING ELSE AGAIN"
+  //     currentMapIndex = 2;
+  //     newMapIndex = 3;
 
-      leftMap.eachLayer(function() {
-          length ++;
-      })
-      leftMap.eachLayer(function(layer) {
-          if (newLength == length - 1) {
-              // text.innerHTML = text.innerHTML + " " +  index;
-              leftMap.removeLayer(layer);
-              leftMap.addLayer(Llayers[newMapIndex]);
+  //     leftMap.eachLayer(function() {
+  //         length ++;
+  //     })
+  //     leftMap.eachLayer(function(layer) {
+  //         if (newLength == length - 1) {
+  //             // text.innerHTML = text.innerHTML + " " +  index;
+  //             leftMap.removeLayer(layer);
+  //             leftMap.addLayer(Llayers[newMapIndex]);
 
-          }
-          newLength++;
-      })
-      newLength = 0;
-      rightMap.eachLayer(function(layer) {
-          if (newLength == length - 1) {
-              // text.innerHTML = text.innerHTML + " " +  index;
-              rightMap.removeLayer(layer);
-              rightMap.addLayer(Rlayers[currentMapIndex]);
-          }
-          newLength++;
-      })
-
-
-    }
+  //         }
+  //         newLength++;
+  //     })
+  //     newLength = 0;
+  //     rightMap.eachLayer(function(layer) {
+  //         if (newLength == length - 1) {
+  //             // text.innerHTML = text.innerHTML + " " +  index;
+  //             rightMap.removeLayer(layer);
+  //             rightMap.addLayer(Rlayers[currentMapIndex]);
+  //         }
+  //         newLength++;
+  //     })
+  //   }
 
 
     // if (this.value > 50 && newMapIndex > currentMapIndex ) {
 
     // }
-  text.innerHTML = "Comparison between " + Layers[currentMapIndex] + " and " + Layers[newMapIndex];
-  }
+  // text.innerHTML = "Comparison between " + Layers[currentMapIndex] + " and " + Layers[newMapIndex];
+  // }
+
+  // cropSlider.oninput = function() {
+  //   var cropText = document.getElementById("cropText");
+  //   var text = document.getElementById("text");
+
+  //   var LEFTMap = document.getElementById("lMap");
+  //   LEFTMap.style.clipPath = `polygon(0% 0%, ${(newCrop) + "%"} 0%, ${(newCrop) + "%"} 100%, 0% 100%)`
+
+  //   cropText.innerHTML = `${(this.value) + "%"}`;
+  //   text.innerHTML = text.innerHTML + " " +  index;
+  //   // text.innerHTML = "Comparison between " + Layers[currentMapIndex] + " and " + Layers[newMapIndex];
+
+  // }
+
+  cropSlider.oninput = function() {
+    var leftMap = document.getElementById("lMap");
+    leftMap.style.clipPath = `polygon(0% 0%, ${(this.value) + "%"} 0%, ${(this.value) + "%"} 100%, 0% 100%)`
+
+    var text = document.getElementById("cropText");
+    text.innerHTML = `${(this.value) + "%"}`;
+}
+
+  
 
   year1.oninput = function() {
       var index = year1.selectedIndex;

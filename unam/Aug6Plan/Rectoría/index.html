@@ -1,16 +1,48 @@
 <!DOCTYPE html>
 <html lang="en" style="height:100%; margin: 0px">
     <head>
-        
+        <meta charset="UTF-8" />
+        <title>From Above: Copilco el Alto</title>
+    
+        <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+        <script src="https://d3js.org/d3.v6.min.js"></script>
+    
+        <link href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" rel="stylesheet" />
+        <!-- <script src="Aug6Plan.js"></script> -->
+
+
+        <script src="../../vendor/L.Control.Opacity.js"></script>
+        <link href="../..vendor/L.Control.Opacity.css" rel="stylesheet" />
+
+        <link href="../styles.css" rel="stylesheet"> 
     </head>
-    <body style="height:80%; margin: 0px">
-        <div style="height:100%; background-color: blueviolet; display: flex; justify-content: center; position: relative">
-            <!-- <img src="../INEGI_zoom.png" style="height: 100%; position: absolute"> -->
+    <body style="height:50%; margin: 0px">
+        <div class="maps" style="height:100%; background-color: blueviolet; display: flex; justify-content: center; position: relative; align-items: center">
+        <!-- <img src="../INEGI_zoom.png" style="height: 100%; position: absolute"> -->
+            <div id="rMap" class="img1" style="height:90%; width:90%;">
+                
+            </div>
+
+            <div id="lMap" class="img2-2"  style="height:90%; width:90%;">
+
+            </div>
         </div>
-        <div style="margin: 20px">
-            <div><a href="../">Go back!</a></div>
-            <p>Rectoría</p>
+        <div style="padding-top: 20px; display: flex; justify-content:center">
+             <div style="width: 94%; text-align: center">
+                    <input type="range" min="0%" max="100%" value="0%" class="slider" id="cropSlider" style="width:100%">
+                    <p id="cropText">0%</p>
+            
+                </div>
+            </div>
+    
+            <div style="margin-left: 50px"><a href="../">Go back!</a>
+
+            <p id="text">hi</p>
+            <p>Rectoría (and Central Library)</p>
             <p>Here are some facts about it: ...</p>
+            </div>
         </div>
+
+        <script src="Rectoría.js"></script>
     </body>
 </html>
