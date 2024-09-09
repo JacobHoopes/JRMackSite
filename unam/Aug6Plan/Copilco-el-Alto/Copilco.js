@@ -59,7 +59,7 @@ d3.json("../../assets/NewUnamBuildings.geojson").then(function (data) {
   });
 
   const Lunam1951b = new L.tileLayer(`${TILE_BASE}/UNAM_19Sept1951_tiles/{z}/{x}/{-y}.png`, {
-    attribution: "Photograph attribution goes here",
+    attribution: "Aerial View, 1951 (Fundación ICA)",
   });
 
   const Runam1951b = new L.tileLayer(`${TILE_BASE}/UNAM_19Sept1951_tiles/{z}/{x}/{-y}.png`, {
